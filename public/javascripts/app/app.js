@@ -6,17 +6,16 @@ var socket;
 
 function initialize(){
   $(document).foundation();
-  // initializeSocketIO();
+  $('#next').on('click', move);
 }
 
-// function initializeSocketIO(){
-//   var port = window.location.port ? window.location.port : '80';
-//   var url = window.location.protocol + '//' + window.location.hostname + ':' + port + '/app';
+parallax.add($("#bar"));
 
-//   socket = io.connect(url);
-//   socket.on('connected', socketConnected);
-// }
+function move(){
+  // alert('hey!');
 
-// function socketConnected(data){
-//   console.log(data);
-// }
+
+  parallax.bar.left(); //Bar slides in from the left
+
+}
+
