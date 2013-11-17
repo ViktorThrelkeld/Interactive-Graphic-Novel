@@ -26,7 +26,7 @@ parallax.earth.show();
     // alert('hey!');
 
   // parallax.earth.hide(); //Bar is being a tad shy
-parallax.speed = 2000;
+// parallax.speed = 2000;
     parallax.robot.right(); //Bar slides in from the left
     // $("#page1").hide();
 
