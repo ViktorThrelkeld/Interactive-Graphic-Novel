@@ -9,21 +9,24 @@ function initialize(){
   $('#back').on('click', back);
 
 }
+    parallax.add($("#earth"));
+
+  parallax.add($("#robot"));
+parallax.speed = 2000;
+
 // debugger;
 
-          // .add($("#page1"));
+          // .add($("#earth"));
   // parallax.bar.hide(); //Bar is being a tad shy
-    parallax.add($("#robot"));
-            // .add($("#earth"));
-// parallax.earth.show();
+
+parallax.earth.show();
   // parallax.add($("#page1"));
 
   function move(){
     // alert('hey!');
-  parallax.add($("#earth"));
 
-  parallax.earth.hide(); //Bar is being a tad shy
-
+  // parallax.earth.hide(); //Bar is being a tad shy
+parallax.speed = 2000;
     parallax.robot.right(); //Bar slides in from the left
     // $("#page1").hide();
 
@@ -32,7 +35,7 @@ function initialize(){
 function back(){
   // alert('yo');
   // parallax.add($("robot"));
-  parallax.robot.hide(); //Bar is being a tad shy
+  // parallax.robot.hide(); //Bar is being a tad shy
 
   parallax.earth.left();
 }
