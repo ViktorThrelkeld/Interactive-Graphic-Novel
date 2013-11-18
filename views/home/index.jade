@@ -1,16 +1,20 @@
 extends ../template/layout
 
 block content
-  .row#earth
+  .row#earth.page
     .small-4.columns
-      h1 On Earth
+      h3.subheader On Earth
       img.pic(src="/images/earth.jpg")
+      //- #space.pic
     .small-4.columns
-      h1 In a kitchen..
+      h3.subheader in a kitchen..
       img.pic(src="/images/annie.jpg")
+      //- #annie
+      img.bubble(src="/images/bubblesauce.png")
     .small-4.columns
-      h1 Eating a meal..
+      h3.subheader Eating a meal..
       img.pic(src="/images/food.jpg")
+      //- #meal.pic
       button#next next
 
   .row#robot
@@ -18,3 +22,13 @@ block content
       h1 UNTIL!
       img.pic(src="/images/robot.jpg")
       button#back back
+      button#up up
+
+  .row#enemy
+    .small-12.columns
+      h1 EXPLOSION!!
+      img.pic#last(src="/images/enemy.JPG")
+      p click picture to abort.
+
+
+

@@ -7,37 +7,46 @@ function initialize(){
   $(document).foundation();
   $('#next').on('click', move);
   $('#back').on('click', back);
+  $('#up').on('click', up);
+  $('#last').on('click', last);
+  $('body').on('keyup', key);
+
+
 
 }
-    parallax.add($("#earth"));
-
+  parallax.add($("#earth"));
   parallax.add($("#robot"));
-parallax.speed = 2000;
+  parallax.add($("#enemy"));
+  parallax.speed = 2000;
 
-// debugger;
-
-          // .add($("#earth"));
-  // parallax.bar.hide(); //Bar is being a tad shy
 
 parallax.earth.show();
-  // parallax.add($("#page1"));
 
-  function move(){
-    // alert('hey!');
+function key(e){
+  e.preventDefault();
+  // p.bar.right();
+  // alert(e.keyCode);
+}
 
-  // parallax.earth.hide(); //Bar is being a tad shy
-// parallax.speed = 2000;
-    parallax.robot.right(); //Bar slides in from the left
-    // $("#page1").hide();
-
-  }
+function move(){
+  parallax.robot.right();
+}
 
 function back(){
-  // alert('yo');
-  // parallax.add($("robot"));
-  // parallax.robot.hide(); //Bar is being a tad shy
-
   parallax.earth.left();
+
 }
-//         // parallax.index.show();
+
+function up(){
+  parallax.enemy.top();
+    parallax.enemy.onload = function(){
+    alert('Wrong Choice...Your computer will now explode. Goodbye. click picture to abort.');
+  };
+}
+
+function last(){
+  parallax.last.bottom();
+}
+
+
 
