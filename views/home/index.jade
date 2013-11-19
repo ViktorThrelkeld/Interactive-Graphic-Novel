@@ -2,37 +2,86 @@ extends ../template/layout
 
 block content
   .row#earth.page
-    .small-4.columns
-      h3.subheader On Earth
+    .large-4.columns
+      h3 On Earth
       img.pic(src="/images/earth.jpg")
+        .nar
       //- #space.pic
-    .small-4.columns
-      h3.subheader in a kitchen..
+    .large-4.columns
+      h3 in a kitchen..
       img.pic(src="/images/annie.jpg")
       //- #annie
       img.bubble(src="/images/bubblesauce.png")
-    .small-4.columns
-      h3.subheader Eating a meal..
+    .large-4.columns
+      h3 Eating a meal..
       img.pic(src="/images/food.jpg")
       //- #meal.pic
       //- button#next next
+    .large-12.columns
+      h3 UNTIL!
+      img.pic(src="/images/badGuy.jpg")
+      //- button#back back
+      button#bad bad
 
   .row#robot
-    .small-12.columns
-      h1 UNTIL!
-      img.pic(src="/images/robot.jpg")
+    .large-12.columns
+      h3 UNTIL!
+      img.pic(src="/images/badGuy.jpg")
       //- button#back back
       button#bad bad
 
   .row#wrong
-    .small-12.columns
-      h1 EXPLOSION!!
+    .large-12.columns
+      h3 EXPLOSION!!
       img.pic#last(src="/images/enemy.JPG")
 
   .row#choice1
-    .small-12.columns
-      h1 what will you do?
+    .large-12.columns
+      h3 what will you do?
       img.pic#cosmo(src="/images/cosmonaut.jpg")
 
 
+  .row#transport
+    .large-12.columns
+      h3 transport
+      img.pic#cosmo(src="/images/transport.jpg")
 
+  .row#plans
+    .large-12.columns
+      h3 plans
+      img.pic#cosmo(src="/images/cat.jpg")
+
+  .row#choice2
+    .large-12.columns
+      h3 choice2
+      //- img.pic#cosmo(src="/images/cosmonaut.jpg")
+
+  .row#wrong2
+    .large-12.columns
+      h3 wrong2
+      //- img.pic#cosmo(src="/images/cosmonaut.jpg")
+
+  .row#transport2
+    .large-12.columns
+      h3 transport2
+      //- img.pic#cosmo(src="/images/cosmonaut.jpg")
+
+  .row#plans2
+    .large-12.columns
+      h3 plans2
+      //- img.pic#cosmo(src="/images/cosmonaut.jpg")
+
+  .row#choice3
+    .large-12.columns
+      h3 choice3
+      //- img.pic#cosmo(src="/images/cosmonaut.jpg")
+
+  .row#wrong3
+    .large-12.columns
+      h3 wrong3
+      //- img.pic#cosmo(src="/images/cosmonaut.jpg")
+
+  .row#end
+    .large-12.columns
+      h3 end
+      //- img.pic#cosmo(src="/images/cosmonaut.jpg")

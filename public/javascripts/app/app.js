@@ -5,88 +5,120 @@ $(document).ready(initialize);
 
 
 function initialize(){
-    $(document).foundation();
-    // $('#next').on('click', move);
-    $('#back').on('click', back);
-    $('#bad').on('click', up);
-    $('#last').on('click', last);
-    $('body').on('keyup', key);
+  $(document).foundation();
+  $('#bad').on('click', up);
+  $('#last').on('click', last);
+  $('body').on('keyup', key);
 
 //scrolling background
-    parallax.background = $("body");
-    parallax.scaling = 0.4; //background moves 40% with the pages
+  parallax.background = $("body");
+  parallax.scaling = 0.4; //background moves 40% with the pages
 
-    parallax.add($("#earth"));
-    parallax.add($("#robot"));
-    parallax.add($("#wrong"));
-    parallax.add($("#choice1"));
+  parallax.add($("#earth"));
+  parallax.add($("#robot"));
+  parallax.add($("#choice1"));
+  parallax.add($("#wrong"));
+  parallax.add($("#transport"));
+  parallax.add($("#plans"));
+  parallax.add($("#choice2"));
+  parallax.add($("#wrong2"));
+  parallax.add($("#transport2"));
+  parallax.add($("#plans2"));
+  parallax.add($("#choice3"));
+  parallax.add($("#wrong3"));
+  parallax.add($("#end"));
 
-    parallax.speed = 2000;
+//set background scroll speed
+  parallax.speed = 2000;
 
-    function key(e){
-      if(e.keyCode == 39){
-        rightKey();
-      }else if(e.keyCode == 37) {
-                        leftKey();
-    // p.bar.right();
+//set arrow keys
+  function key(e){
+    if(e.keyCode == 39){
+      rightKey();
+    }else if(e.keyCode == 37) {
+      leftKey();
+
     // alert(e.keyCode);
-        // e.preventDefault();
+      e.preventDefault();
     }
   }
+
   parallax.preload = function(){
     rightKey = "";
     leftKey = "";
-
-                // $(".control").hide();
-        };
+  };
 
 //set navigation
    parallax.earth.onload=function(){
-    setTop("robot");
-   //              setTop("sandbox", "SandBox");
-   //              setLeft("me","The Guy");
+    fromTop("robot");
   };
 
    parallax.robot.onload=function(){
-    setRight("choice1");
-    setLeft("earth");
+    fromLeft("earth");
+    fromRight("choice1");
+
   };
 
-  // parallax.wrong.onload=function(){
+  parallax.choice1.onload = function(){
+    fromLeft("robot");
+    fromRight("transport");
 
-  // };
-  parallax.choice1.onload=function(){
-    // setRight("choice1");
-    setLeft("robot");
   };
+
+  parallax.transport.onload = function(){
+    fromLeft("choice1");
+    fromRight("plans");
+  };
+
+  parallax.plans.onload = function(){
+    fromLeft("transport");
+    fromRight("choice2");
+  };
+
+  parallax.choice2.onload = function(){
+    fromLeft("plans");
+    fromRight("transport2");
+  };
+
+  parallax.transport2.onload = function(){
+    fromLeft("choice2");
+    fromRight("plans2");
+  };
+
+  parallax.plans2.onload = function(){
+    fromLeft("transport2");
+    fromRight("choice3");
+  };
+
+  parallax.choice3.onload = function(){
+    fromLeft("plans2");
+    fromRight("end");
+  };
+
+  parallax.end.onload = function(){
+    fromLeft("choice3");
+  };
+
 
   //set
-  function setRight(page){
+  function fromRight(page){
     rightKey = function(){
       parallax[page].right();
-                  };
+    };
   }
 
-  function setLeft(page){
+  function fromLeft(page){
     leftKey = function(){
       parallax[page].left();
-                  };
+    };
   }
 
-  function setTop(page){
+  function fromTop(page){
     rightKey = function(){
       parallax[page].top();
     };
   }
 
-  // function move(){
-  //   parallax.robot.right();
-  // }
-
-  function back(){
-    parallax.earth.left();
-
-  }
 
   function up(){
     parallax.wrong.bottom();
