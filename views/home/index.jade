@@ -3,78 +3,96 @@ extends ../template/layout
 block content
   .row#earth.page
     .large-4.columns
-      h3 On Earth
-      img.pic(src="/images/earth.jpg")
-        .nar
-      //- #space.pic
+      .ex
+        #space.pic
+          p.nar On earth...
+          #thought
+            p hello
     .large-4.columns
-      h3 in a kitchen..
-      img.pic(src="/images/annie.jpg")
-      //- #annie
-      img.bubble(src="/images/bubblesauce.png")
+      .ex
+        #annie.pic
+          p.nar In a kitchen...
+        img.bubble(src="/images/bubblesauce.png")
     .large-4.columns
-      h3 Eating a meal..
-      img.pic(src="/images/food.jpg")
-      //- #meal.pic
-      //- button#next next
+      .ex
+        #meal.pic
+          p.nar Eating a meal... <br>An unsuspecting family lives their lives.
     .large-12.columns
-      h3 UNTIL!
-      img.pic(src="/images/badGuy.jpg")
-      //- button#back back
-      button#bad bad
+      .ex
+        #sunset.pic
+          p.nar Meanwhile, lurking above..A sinister army of robots plan the destruction of mankind in an effort to harbor the energy resources at the core of the planet.
 
   .row#robot
+    .large-6.columns
+      .ex
+        #enemy.pic
+          p.nar They are an army of destructors.
+      //- button#bad bad
+    .large-6.columns
+      .ex
+        #badGuy.pic
+          p.nar They are led by an evil genius.
     .large-12.columns
-      h3 UNTIL!
-      img.pic(src="/images/badGuy.jpg")
-      //- button#back back
-      button#bad bad
+      .ex
+        #badship.pic
+          p.nar A threat to mankind
+
+
+  .row#choice1
+    .large-6.columns
+      .ex
+        #closeup.pic
+          p.nar here is a choice.
+    .large-6.columns
+      .ex
+        #fleet.pic
+          p.nar here is a choice.
+    .large-12.columns
+      .ex
+        #decide.pic
+          p.nar here is a choice.
 
   .row#wrong
     .large-12.columns
-      h3 EXPLOSION!!
-      img.pic#last(src="/images/enemy.JPG")
-
-  .row#choice1
-    .large-12.columns
-      h3 what will you do?
-      img.pic#cosmo(src="/images/cosmonaut.jpg")
-
+      .ex
+        #boom.full
+          p.nar oops. you killed civilization.
 
   .row#transport
     .large-12.columns
-      h3 transport
-      img.pic#cosmo(src="/images/transport.jpg")
+      .ex
+        #beam.full
+          p.nar We are being taken over! Beam me up!!
 
   .row#plans
-    .large-12.columns
-      h3 plans
-      img.pic#cosmo(src="/images/cat.jpg")
+    .large-6.columns
+      .ex
+        #newbody.pic
+          p.nar huh?.
+    .large-6.columns
+      .ex
+        #cat.pic
+          p.nar meow.
 
   .row#choice2
     .large-12.columns
       h3 choice2
-      //- img.pic#cosmo(src="/images/cosmonaut.jpg")
 
   .row#wrong2
     .large-12.columns
       h3 wrong2
-      //- img.pic#cosmo(src="/images/cosmonaut.jpg")
 
   .row#transport2
     .large-12.columns
       h3 transport2
-      //- img.pic#cosmo(src="/images/cosmonaut.jpg")
 
   .row#plans2
     .large-12.columns
       h3 plans2
-      //- img.pic#cosmo(src="/images/cosmonaut.jpg")
 
   .row#choice3
     .large-12.columns
       h3 choice3
-      //- img.pic#cosmo(src="/images/cosmonaut.jpg")
 
   .row#wrong3
     .large-12.columns
@@ -84,4 +102,3 @@ block content
   .row#end
     .large-12.columns
       h3 end
-      //- img.pic#cosmo(src="/images/cosmonaut.jpg")
