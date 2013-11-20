@@ -14,6 +14,7 @@ function initialize(){
   parallax.background = $("body");
   parallax.scaling = 0.4; //background moves 40% with the pages
 
+//parallax properties----------------------------------------------------------
   parallax.add($("#earth"));
   parallax.add($("#robot"));
   parallax.add($("#choice1"));
@@ -23,7 +24,6 @@ function initialize(){
   parallax.add($("#choice2"));
   parallax.add($("#wrong2"));
   parallax.add($("#transport2"));
-  parallax.add($("#plans2"));
   parallax.add($("#choice3"));
   parallax.add($("#wrong3"));
   parallax.add($("#end"));
@@ -48,7 +48,7 @@ function initialize(){
     leftKey = "";
   };
 
-//set navigation
+//set navigation-------------------------------------------------------------
    parallax.earth.onload=function(){
     fromTop("robot");
   };
@@ -82,16 +82,11 @@ function initialize(){
 
   parallax.transport2.onload = function(){
     fromLeft("choice2");
-    fromRight("plans2");
-  };
-
-  parallax.plans2.onload = function(){
-    fromLeft("transport2");
     fromRight("choice3");
   };
 
   parallax.choice3.onload = function(){
-    fromLeft("plans2");
+    fromLeft("transport2");
     fromRight("end");
   };
 
@@ -100,7 +95,7 @@ function initialize(){
   };
 
 
-  //set
+  //set----------------------------------------------------------------------
   function fromRight(page){
     rightKey = function(){
       parallax[page].right();
