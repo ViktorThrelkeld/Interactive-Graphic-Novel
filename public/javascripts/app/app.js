@@ -6,8 +6,8 @@ $(document).ready(initialize);
 
 function initialize(){
   $(document).foundation();
-  $('#bad').on('click', up);
-  $('#last').on('click', last);
+  $('#speechbad').on('click', up);
+  $('#boom').on('click', last);
   $('body').on('keyup', key);
 
 //scrolling background
@@ -67,7 +67,7 @@ function initialize(){
 
   parallax.transport.onload = function(){
     fromLeft("choice1");
-    fromRight("plans");
+    fromBottom("plans");
   };
 
   parallax.plans.onload = function(){
@@ -111,6 +111,12 @@ function initialize(){
   function fromTop(page){
     rightKey = function(){
       parallax[page].top();
+    };
+  }
+
+  function fromBottom(page){
+    rightKey = function(){
+      parallax[page].bottom();
     };
   }
 
