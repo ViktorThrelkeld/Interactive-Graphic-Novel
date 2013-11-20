@@ -6,9 +6,12 @@ $(document).ready(initialize);
 
 function initialize(){
   $(document).foundation();
-  $('#speechbad').on('click', up);
+  $('#speechbad').on('click', wrong1);
+  $('#speechgood').on('click', transport);
   $('#boom').on('click', last);
+  $('#pound').on('click', last);
   $('body').on('keyup', key);
+  $('#thoughtbad').on('click', wrong2);
 
 //scrolling background
   parallax.background = $("body");
@@ -61,8 +64,6 @@ function initialize(){
 
   parallax.choice1.onload = function(){
     fromLeft("robot");
-    fromRight("transport");
-
   };
 
   parallax.transport.onload = function(){
@@ -120,11 +121,23 @@ function initialize(){
     };
   }
 
+  // click functions---------------------------------------------------------
 
-  function up(){
+  function transport(){
+  parallax.transport.right();
+  }
+
+  function wrong1(){
     parallax.wrong.bottom();
       parallax.wrong.onload = function(){
       alert('Wrong Choice...Your computer will now explode. Goodbye. click picture to abort.');
+    };
+  }
+
+  function wrong2(){
+    parallax.wrong2.bottom();
+      parallax.wrong2.onload = function(){
+        alert('Wrong Choice..Your are in the pound and the world will now explode.Goodbye. click picture to abort.');
     };
   }
 

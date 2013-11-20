@@ -22,9 +22,8 @@ block content
 
   .row#robot
     .large-6.columns
-      .ex
-        #enemy.pic
-          p.nar They are an army of destructors. The__________
+      #enemy.pic
+        p.nar They are an army of destructors. The__________
     .large-6.columns
       .ex
         #badGuy.pic
@@ -38,7 +37,7 @@ block content
     .large-6.columns
       .ex
         #closeup.pic
-          p.nar A small hope lies in a new and secret technology that allows living entities to be controlled by organic software. This is due to the work of a small race of robots on an explorative mission who what is unfolding and step in to help.
+          p.nar A small hope lies in a new and secret technology that allows living entities to be controlled by organic software. This is due to the work of a small race of robots on an explorative mission who see what is unfolding and step in to help.
     .large-6.columns
       .ex
         #fleet.pic
@@ -54,7 +53,9 @@ block content
       .ex
         #decide.pic
           p.nar Should you defend yourself or teleport?
-          p#speechgood We need to teleport.
+          a
+            #speechgood
+              p No,<br>We need to<br>teleport.
 
       //- button#bad bad
 
@@ -88,7 +89,7 @@ block content
     .large-6.columns
       .ex
         #dogandchild.pic
-          p.nar
+          p.nar Children are so annoying!
     .large-6.columns
       .ex
         #dogcomp.pic
@@ -96,16 +97,21 @@ block content
     .large-6.columns
       .ex
         #door.pic
-          p.nar
+          p.nar An unguarded open door could make a great escape route for a better chance at finding help.
     .large-6.columns
       .ex
         #dogclose.pic
           p.nar There isn't much time
-
+          a
+            #thoughtbad
+              p Should I run<br>for the door?
+          a
+            #thoughtgood
+              p Should i use<br>reserve energy to<br>transport to the kid?
   .row#wrong2
     .large-12.columns
       .ex
-        #pound.pic
+        #pound.full
           p.nar You got caught and put in the pound.
 
   .row#transport2
