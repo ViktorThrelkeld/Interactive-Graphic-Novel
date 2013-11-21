@@ -10,8 +10,12 @@ function initialize(){
   $('#speechgood').on('click', transport);
   $('#boom').on('click', last);
   $('#pound').on('click', last);
+  $('#sos').on('click', last);
   $('body').on('keyup', key);
   $('#thoughtbad').on('click', wrong2);
+  $('#thoughtgood').on('click', transport2);
+  $('#computegood').on('click', end);
+  $('#computebad').on('click', wrong3);
 
 //scrolling background
   parallax.background = $("body");
@@ -78,7 +82,7 @@ function initialize(){
 
   parallax.choice2.onload = function(){
     fromLeft("plans");
-    fromRight("transport2");
+    // fromRight("transport2");
   };
 
   parallax.transport2.onload = function(){
@@ -88,7 +92,7 @@ function initialize(){
 
   parallax.choice3.onload = function(){
     fromLeft("transport2");
-    fromRight("end");
+    // fromRight("end");
   };
 
   parallax.end.onload = function(){
@@ -124,7 +128,15 @@ function initialize(){
   // click functions---------------------------------------------------------
 
   function transport(){
-  parallax.transport.right();
+    parallax.transport.right();
+  }
+
+  function transport2(){
+    parallax.transport2.right();
+  }
+
+  function end(){
+    parallax.end.bottom();
   }
 
   function wrong1(){
@@ -138,6 +150,13 @@ function initialize(){
     parallax.wrong2.bottom();
       parallax.wrong2.onload = function(){
         alert('Wrong Choice..Your are in the pound and the world will now explode.Goodbye. click picture to abort.');
+    };
+  }
+
+  function wrong3(){
+    parallax.wrong3.top();
+    parallax.wrong3.onload = function(){
+      alert('S.O.S.?? You are S.O.L.  click picture to abort.');
     };
   }
 
