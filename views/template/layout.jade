@@ -3,6 +3,14 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en">        <!--<![endif]-->
 include head
 body
+  .contain-to-grid.fixed
+    nav.top-bar
+      section.top-bar-section
+        ul.right
+          li.divider
+          li
+            //- span Audio
+            audio#distress(src='/audios/distress1min.mp3', controls=true)
   block content
   include scripts
 </html>
