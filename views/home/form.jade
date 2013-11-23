@@ -1,0 +1,10 @@
+
+form(action="/reader", method="post")
+  mixin field(4, "text", "Hero", "Hero's name", hero, "Your Name", true)
+  mixin field(4, "text", "Dog", "A Dog's Name", dog, "Fido")
+  mixin field(4, "text", "Child", "A Child's Name", child, "Suzy")
+
+  button.tiny.success.rounded(value='submit') Save
+
+//- mixin field(colSize, type, name, text, value, placeholder, autofocus)
+//- input(value=value, type=type, name=name, placeholder=placeholder, autofocus=autofocus)

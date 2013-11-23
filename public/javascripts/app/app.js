@@ -57,11 +57,11 @@ function initialize(){
   };
 
 //set navigation-------------------------------------------------------------
-   parallax.earth.onload=function(){
+   parallax.earth.onload = function(){
     fromTop("robot");
   };
 
-   parallax.robot.onload=function(){
+   parallax.robot.onload = function(){
     fromLeft("earth");
     fromRight("choice1");
 
