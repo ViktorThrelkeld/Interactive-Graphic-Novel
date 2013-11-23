@@ -35,6 +35,7 @@ function initialize(){
   parallax.add($("#choice3"));
   parallax.add($("#wrong3"));
   parallax.add($("#end"));
+  parallax.add($("#credits"));
 
 //set background scroll speed
   parallax.speed = 2000;
@@ -59,6 +60,9 @@ function initialize(){
 //set navigation-------------------------------------------------------------
    parallax.earth.onload = function(){
     fromTop("robot");
+    // getElementById('distress1min.mp3').play();
+    // var myAudio = document.getElementById('distress1min.mp3');
+    // myAudio.setAttribute('autoplay', 'autoplay');
   };
 
    parallax.robot.onload = function(){
@@ -88,7 +92,7 @@ function initialize(){
 
   parallax.transport2.onload = function(){
     fromLeft("choice2");
-    fromRight("choice3");
+    fromTop("choice3");
   };
 
   parallax.choice3.onload = function(){
@@ -98,6 +102,11 @@ function initialize(){
 
   parallax.end.onload = function(){
     fromLeft("choice3");
+    fromBottom("credits");
+  };
+
+   parallax.credits.onload = function(){
+    fromLeft("end");
   };
 
 
