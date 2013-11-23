@@ -1,12 +1,11 @@
-require('./models/reader');
-
-
 
 var express = require('express');
 var mongoose = require('mongoose');
 
 // model definitions
 require('require-dir')('./models');
+require('./models/reader');
+
 
 
 // route definitions
@@ -22,7 +21,7 @@ require('./config').initialize(app, RedisStore);
 
 // routes
 app.get('/', home.index);
-app.post('/', home.create);
+app.post('/reader', home.create);
 app.get('/comic', comic.index);
 
 // start server & socket.io
