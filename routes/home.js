@@ -9,6 +9,6 @@ exports.index = function(req, res){
 
 exports.create = function(req, res){
   new Reader(req.body).save(function(err, reader, count){
-    res.redirect('/comic');
+    res.redirect("/comic/" + reader.id);
   });
 };

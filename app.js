@@ -23,6 +23,7 @@ require('./config').initialize(app, RedisStore);
 app.get('/', home.index);
 app.post('/reader', home.create);
 app.get('/comic', comic.index);
+app.get('/comic/:id', comic.show);
 
 // start server & socket.io
 var common = require('./sockets/common');

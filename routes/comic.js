@@ -7,3 +7,9 @@ exports.index = function(req, res){
   res.render('comic/index', {title: 'Comic', readers: readers});
   });
 };
+
+exports.show = function(req, res){
+  Reader.findById(req.params.id, function(err, reader){
+    res.render('comic/show', {title: 'Comic', reader: reader});
+  });
+};
