@@ -6,7 +6,6 @@ block content
       .large-4.columns
         .ex
           #space.pic
-            p.nar= reader.hero
             p.nar On earth...
       .large-4.columns
         .ex
@@ -27,7 +26,7 @@ block content
     .pagewrap
       .large-6.columns
         #enemy.pic
-          p.nar They are an army of destructors. They go by the name of ________
+          p.nar They are an army of destructors. They go by the name of Mech.
       .large-6.columns
         .ex
           #badGuy.pic
@@ -35,14 +34,14 @@ block content
       .large-12.columns
         .ex
           #badship.pic
-            p.nar _________, a true threat to mankind. They wish to destroy earth and absorb the energy of the blast to fuel their bio-reactors. Any possibility of a future threat from the human race would be eliminated as well. Technology has been growing at a logarithmic pace on earth. It draws the interest of beings all over the galaxy.
+            p.nar Mech are true threat to mankind. They wish to destroy earth and absorb the energy of the blast to fuel their bio-reactors. Any possibility of a future threat from the human race would be eliminated as well. Technology has been growing at a logarithmic pace on earth. It draws the interest of beings all over the galaxy.
 
   .row#choice1
     .pagewrap
       .large-6.columns
         .ex
           #closeup.pic
-            p.nar A small hope lies in a new and secret technology that allows living entities to be controlled by organic software. This is due to the work of a small race of robots on an explorative mission who see what is unfolding and step in to help.
+            p.nar= "A small hope lies in a new and secret technology that allows living entities to be controlled by organic software. This is due to the work of a small race of robots on an explorative mission who see what is unfolding and step in to help. You, " + reader.hero +" are their leader."
       .large-6.columns
         .ex
           #fleet.pic
@@ -50,10 +49,10 @@ block content
       .large-6.columns
         .ex
           #close2.pic
-            p.nar Something needs to happen quickly.
+            p.nar= "Something needs to happen quickly. " + reader.hero + ", you need to make a choice"
             a
               #speechbad
-                p We need to load <br> the cannons.
+                p.nar= reader.hero + ","<br>"we need to load"<br>"the cannons."
       .large-6.columns
         .ex
           #decide.pic
@@ -76,7 +75,7 @@ block content
       .large-12.columns
         .ex
           #beam.full
-            p.nar The ship is overtaken and our hero ________, is transported to earth at the last possible second.
+            p.nar= "The ship is overtaken and our hero, " + reader.hero + ", is transported to earth at the last possible second."
   .row#plans
     .pagewrap
       .large-12.columns
@@ -86,18 +85,19 @@ block content
       .large-6.columns
         .ex
           #newbody.pic
-            p.nar name of pet__________ has taken on an entirely new entity. A quantum leap in real time. ; bubble "huh? what happened? Why do I want to chase that cat?"
+            p.nar= reader.dog + " has taken on an entirely new entity. The effect of a quantum leap in real time."
+            //- ; bubble "huh? what happened? Why do I want to chase that cat?"
       .large-6.columns
         .ex
           #cat.pic
-            p.nar Only the family cat and two year old youngster can sense a change in __________.
+            p.nar= "Only the family cat and two year old youngster " + reader.child + " can sense a change in " + reader.dog + "."
 
   .row#choice2
     .pagewrap
       .large-6.columns
         .ex
           #dogandchild.pic
-            p.nar Ironically, young ________ wants to play with _____ but can't understand the seriousness of the situation.
+            p.nar= "Ironically, young " + reader.child + " wants to play with " + reader.dog + " but can't understand the seriousness of the situation."
       .large-6.columns
         .ex
           #dogcomp.pic
@@ -109,7 +109,7 @@ block content
       .large-6.columns
         .ex
           #dogclose.pic
-            p.nar There isn't much time
+            p.nar= "There isn't much time. " + reader.dog + ", make a descision!"
             a
               #thoughtbad
                 p Should I run<br>for the door?
@@ -121,22 +121,22 @@ block content
       .large-12.columns
         .ex
           #pound.full
-            p.nar You got caught and put in the pound.
+            p.nar= reader.dog + ", you got caught and put in the pound."
 
   .row#transport2
     .pagewrap
       .large-12.columns
         .ex
           #childanddog.pic
-            p.nar With a small amount of energy, _____ transports from _____ into  ______.
+            p.nar= "With a small amount of energy, " + reader.hero + " transports from " + reader.dog + " into " + reader.child + "."
       .large-6.columns
         .ex
           #dish.pic
-            p.nar You need to activate the laser cannons on this Reagan era star wars system. Aren't you glad they secretly finished it?
+            p.nar= reader.child + ", you need to activate the laser cannons on this Reagan era star wars system. Aren't you glad they secretly finished it?"
       .large-6.columns
         .ex
           #bedtime.pic
-            p.nar _______ is put to bed early for acting skittishly!
+            p.nar= "You are put to bed early for acting skittishly! Bad " + reader.child
 
         //- //speech bubble - you need your rest sweety
 
@@ -145,7 +145,7 @@ block content
       .large-6.columns
         .ex
           #sneaking.pic
-            p.nar _____ sneaks up when all is quiet.
+            p.nar= reader.child + " sneaks up when all is quiet."
       .large-6.columns
         .ex
           #bothatcomp.pic
@@ -188,7 +188,7 @@ block content
       .large-6.columns
         .ex
           #enemydies.pic
-            p.nar Ouch! The enemy is wiped out. There is a dropout in the grid for a moment and you are now a two year old smart enough to put Tony Stark in the corner. Congrats!
+            p.nar= "Ouch! The enemy is wiped out. There is a dropout in the grid for a moment and you are now a two year old smart enough to place Tony Stark in the corner. Congratulations " + reader.hero + "!"
 
   .row#credits
       .pagewrap
