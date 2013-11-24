@@ -3,5 +3,7 @@ var Reader = mongoose.model('Reader');
 
 
 exports.index = function(req, res){
-  res.render('comic/index', {title: 'comic'});
+  Reader.find(function(err, readers){
+  res.render('comic/index', {title: 'Comic', readers: readers});
+  });
 };
