@@ -61,7 +61,10 @@ function initialize(){
    parallax.earth.onload = function(){
     fromTop("robot");
     // alert('yo');
-    // document.getElementById('player').play();
+
+
+    // document.getElementById('distress1min.mp3').Play();
+    document.getElementById('distress').play();
     // getElementById('distress1min.mp3').play();
     // var myAudio = document.getElementById('distress1min.mp3');
     // myAudio.setAttribute('autoplay', 'autoplay');
