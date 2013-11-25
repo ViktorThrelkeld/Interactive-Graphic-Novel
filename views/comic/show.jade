@@ -32,7 +32,7 @@ block content
       .large-6.columns
         .ex
           #badGuy.pic
-            p.nar  Behold, the evil genius leader _________.
+            p.nar  Behold, their evil genius leader Vlad.
       .large-12.columns
         .ex
           #badship.pic
@@ -63,8 +63,6 @@ block content
               #speechgood
                 p No, we need to<br>teleport.
 
-      //- button#bad bad
-
   .row#wrong
     .pagewrap
       .large-12.columns
@@ -90,11 +88,11 @@ block content
             p.nar= reader.dog + " has taken on an entirely new entity. This is the effect of a quantum leap in real time."
             #dogthought
                 p  Why do I want<br>to chase that cat?
-            //- ; bubble "huh? what happened? Why do I want to chase that cat?"
       .large-6.columns
         .ex
           #cat.pic
             p.nar= "Only the family cat and two year old youngster " + reader.child + " can sense a change in " + reader.dog + "."
+            audio#meow(src='/audios/meow.mp3')
 
   .row#choice2
     .pagewrap

@@ -16,7 +16,8 @@ function initialize(){
   $('#thoughtgood').on('click', transport2);
   $('#computegood').on('click', end);
   $('#computebad').on('click', wrong3);
-  $('#mute').on('click', mute);
+  // $('#mute').on('click', mute);
+  $('#cat').on('click', meow);
 
 //scrolling background
   parallax.background = $("body");
@@ -143,7 +144,6 @@ function initialize(){
   // click functions---------------------------------------------------------
 
 
-
   function transport(){
     parallax.transport.right();
   }
@@ -187,8 +187,13 @@ function initialize(){
 }//end of initialize
 
 //-------------------------------------------------------------------------
-  function mute(){
-    alert('hey');
- // <button onclick="document.getElementById('demo').pause()">Pause the Audio</button>
-    $('#distress').pause();
-  }
+
+function meow(){
+  document.getElementById('meow').play();
+}
+
+ //  function mute(){
+ //    alert('hey');
+ // // <button onclick="document.getElementById('demo').pause()">Pause the Audio</button>
+ //    $('#distress').pause();
+ //  }

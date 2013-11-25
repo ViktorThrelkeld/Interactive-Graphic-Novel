@@ -7,6 +7,10 @@ body{
   background: url("/images/star.jpg");
 }
 
+button:hover{
+  background-color: #380B38;
+}
+
 .color{
   color: white;
   background-color: #380B38;
@@ -29,7 +33,6 @@ width: 800px;
   // text-shadow:5px 7px 11px #380d38;
   text-shadow:12px 15px 31px #380b38;
 // margin: auto:
-
 }
 
 //-----------------------------------------------------------
@@ -375,6 +378,24 @@ width: 800px;
 #cat{
   background-image: url("/images/cat.jpg");
   background-size: 100% 100%;
+  transition:All 1s ease;
+  -webkit-transition:All 1s ease;
+  -moz-transition:All 1s ease;
+  -o-transition:All 1s ease;
+  transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -o-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -ms-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+}
+
+#cat:hover{
+  transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
+  -webkit-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
+  -moz-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
+  -o-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
+  -ms-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
+
 }
 
 #dogandchild{
