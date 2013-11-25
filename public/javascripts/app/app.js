@@ -1,5 +1,6 @@
 /* global document, window, io */
 var next;
+var timer;
 
 $(document).ready(initialize);
 
@@ -18,6 +19,13 @@ function initialize(){
   $('#computebad').on('click', wrong3);
   // $('#mute').on('click', mute);
   $('#cat').on('click', meow);
+  $('#shipexplodes').on('click', bomb);
+  $('#beam').on('click', sweep);
+  $('#shoot').on('click', raygun);
+
+
+
+
 
 //scrolling background
   parallax.background = $("body");
@@ -79,16 +87,23 @@ function initialize(){
 
   parallax.choice1.onload = function(){
     fromLeft("robot");
+
+
   };
 
   parallax.transport.onload = function(){
     fromLeft("choice1");
     fromBottom("plans");
+    timer = setInterval(function(){
+      $('#beam').toggleClass('beamed');
+    }, 200);
   };
 
   parallax.plans.onload = function(){
     fromLeft("transport");
     fromRight("choice2");
+    clearInterval(timer);
+
   };
 
   parallax.choice2.onload = function(){
@@ -190,6 +205,18 @@ function initialize(){
 
 function meow(){
   document.getElementById('meow').play();
+}
+
+function bomb(){
+  document.getElementById('bomb').play();
+}
+
+function sweep(){
+  document.getElementById('sweep').play();
+}
+
+function raygun(){
+  document.getElementById('raygun').play();
 }
 
  //  function mute(){

@@ -190,12 +190,11 @@ width: 800px;
   background-size: 100% 129%;
   background-repeat: no-repeat;
   width: 209px;
-  color: black;
   padding-left: 49px;
   padding-top: 40px;
   // margin-left: 47px;
   position: absolute;
-  left: -37px;
+  left: -71px;
   top: 24px;
   color: red;
   opacity: 0.9;
@@ -362,16 +361,40 @@ width: 800px;
 #shipexplodes{
   background-image: url("/images/shipexplodes.jpg");
   background-size: 100% 100%;
-
+  transition:All 1s ease;
+  -webkit-transition:All 1s ease;
+  -moz-transition:All 1s ease;
+  -o-transition:All 1s ease;
+  transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -o-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -ms-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
 }
+
+#shipexplodes:hover{
+
+  transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
+  -webkit-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
+  -moz-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
+  -o-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
+  -ms-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
+}
+
+
 
 #newbody{
   background-image: url("/images/newbody.jpg");
   background-size: 100% 100%;
 }
 
-#beam{
+.beam{
   background-image: url("/images/transport.jpg");
+  background-size: 100% 100%;
+}
+
+.beamed{
+  background-image: url("/images/transported.jpg");
   background-size: 100% 100%;
 }
 
@@ -390,13 +413,14 @@ width: 800px;
 }
 
 #cat:hover{
-  transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
-  -webkit-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
-  -moz-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
-  -o-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
-  -ms-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
-
+  transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
+  -webkit-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
+  -moz-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
+  -o-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
+  -ms-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
 }
+
+
 
 #dogandchild{
   background-image: url("/images/dogandchild.jpg");
@@ -474,6 +498,24 @@ width: 800px;
 #shoot{
   background-image: url("/images/shoot.jpg");
   background-size: 100% 100%;
+  transition:All 1s ease;
+  -webkit-transition:All 1s ease;
+  -moz-transition:All 1s ease;
+  -o-transition:All 1s ease;
+  transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -o-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -ms-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+
+}
+
+#shoot:hover{
+  transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
+  -webkit-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
+  -moz-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
+  -o-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
+  -ms-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
 }
 
 #mirror{
@@ -484,7 +526,26 @@ width: 800px;
 #enemydies{
   background-image: url("/images/enemydies.jpg");
   background-size: 100% 100%;
+
+  transition:All 3.1436s ease-in-out;
+  -webkit-transition:All 3.1436s ease-in-out;
+  -moz-transition:All 3.1436s ease-in-out;
+  -o-transition:All 3.1436s ease-in-out;
+  transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -o-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -ms-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
 }
+
+#enemydies:hover{
+  transform: rotate(360deg) scale(1) skew(0deg) translate(0px);
+  -webkit-transform: rotate(360deg) scale(1) skew(0deg) translate(0px);
+  -moz-transform: rotate(360deg) scale(1) skew(0deg) translate(0px);
+  -o-transform: rotate(360deg) scale(1) skew(0deg) translate(0px);
+  -ms-transform: rotate(360deg) scale(1) skew(0deg) translate(0px);
+}
+
 
 #earthend{
   background-image: url("/images/earthend.jpg");
@@ -522,7 +583,7 @@ color: black;
 background-color: yellow;
 width: 100%;
 opacity: 0.9;
-border: solid black 3px;
+border: solid black 5px;
 font-family: 'Roboto Condensed', sans-serif;
 font-size: 12px;
 }

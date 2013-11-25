@@ -74,14 +74,17 @@ block content
     .pagewrap
       .large-12.columns
         .ex
-          #beam.full
-            p.nar= "The ship is overtaken and our hero, " + reader.hero + ", is transported to earth at the last possible second."
+          #beam.beam.full
+            p.nar= "The ship is overtaken and our hero " + reader.hero + ", is transported to earth at the last possible second."
+            audio#sweep(src='/audios/sweep.mp3')
+
   .row#plans
     .pagewrap
       .large-12.columns
         .ex
           #shipexplodes.pic
             p.nar The enemy scavenges your ship and sets it to self destruct. The worthless ship detonates while all the intelligence it once held has now taken taken refuge in an average family pet.
+            audio#bomb(src='/audios/bomb.mp3')
       .large-6.columns
         .ex
           #newbody.pic
@@ -183,6 +186,7 @@ block content
         .ex
           #shoot.pic
             p.nar Detonate!!
+            audio#raygun(src='/audios/raygun.mp3')
       .large-6.columns
         .ex
           #mirror.pic
