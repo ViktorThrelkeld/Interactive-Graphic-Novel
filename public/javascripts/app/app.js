@@ -1,5 +1,6 @@
 /* global document, window, io */
 var next;
+var timer;
 
 $(document).ready(initialize);
 
@@ -16,7 +17,15 @@ function initialize(){
   $('#thoughtgood').on('click', transport2);
   $('#computegood').on('click', end);
   $('#computebad').on('click', wrong3);
-  $('#mute').on('click', mute);
+  // $('#mute').on('click', mute);
+  $('#cat').on('click', meow);
+  $('#shipexplodes').on('click', bomb);
+  $('#beam').on('click', sweep);
+  $('#shoot').on('click', raygun);
+
+
+
+
 
 //scrolling background
   parallax.background = $("body");
@@ -63,11 +72,11 @@ function initialize(){
     // alert('yo');
 
 
-    // document.getElementById('distress1min.mp3').Play();
+
     document.getElementById('distress').play();
-    // getElementById('distress1min.mp3').play();
-    // var myAudio = document.getElementById('distress1min.mp3');
-    // myAudio.setAttribute('autoplay', 'autoplay');
+    // document.getElementById('distress').addEventListener('ended', function(){
+    // this.currentTime = 0;
+    // }, false);
   };
 
    parallax.robot.onload = function(){
@@ -78,16 +87,23 @@ function initialize(){
 
   parallax.choice1.onload = function(){
     fromLeft("robot");
+
+
   };
 
   parallax.transport.onload = function(){
     fromLeft("choice1");
     fromBottom("plans");
+    timer = setInterval(function(){
+      $('#beam').toggleClass('beamed');
+    }, 200);
   };
 
   parallax.plans.onload = function(){
     fromLeft("transport");
     fromRight("choice2");
+    clearInterval(timer);
+
   };
 
   parallax.choice2.onload = function(){
@@ -98,11 +114,16 @@ function initialize(){
   parallax.transport2.onload = function(){
     fromLeft("choice2");
     fromTop("choice3");
+    timer = setInterval(function(){
+      $('#childanddog').toggleClass('beamed2');
+    }, 200);
   };
 
   parallax.choice3.onload = function(){
     fromLeft("transport2");
     // fromRight("end");
+    clearInterval(timer);
+
   };
 
   parallax.end.onload = function(){
@@ -141,7 +162,6 @@ function initialize(){
   }
 
   // click functions---------------------------------------------------------
-
 
 
   function transport(){
@@ -187,8 +207,25 @@ function initialize(){
 }//end of initialize
 
 //-------------------------------------------------------------------------
-  function mute(){
-    alert('hey');
- // <button onclick="document.getElementById('demo').pause()">Pause the Audio</button>
-    $('#distress').pause();
-  }
+
+function meow(){
+  document.getElementById('meow').play();
+}
+
+function bomb(){
+  document.getElementById('bomb').play();
+}
+
+function sweep(){
+  document.getElementById('sweep').play();
+}
+
+function raygun(){
+  document.getElementById('raygun').play();
+}
+
+ //  function mute(){
+ //    alert('hey');
+ // // <button onclick="document.getElementById('demo').pause()">Pause the Audio</button>
+ //    $('#distress').pause();
+ //  }

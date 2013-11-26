@@ -8,12 +8,14 @@ body
       section.top-bar-section
         ul.left
           li
-            a.button.tiny.radius.expand(href='/') Restart
+            a.nar(href='/') Restart
+                        //- a.button.tiny.radius.expand(href='/') Restart
+
         ul.right
           li.divider
           li
             //- span Audio
-            audio#distress(src='/audios/distress1min.mp3', controls=true)
+            audio#distress(src='/audios/dstress.mp3', loop=true, controls=true)
   block content
   include scripts
 </html>

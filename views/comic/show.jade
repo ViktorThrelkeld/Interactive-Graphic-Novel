@@ -21,7 +21,7 @@ block content
       .large-12.columns
         .ex
           #sunset.pic
-            p.nar Meanwhile, lurking above..An aggresive army of robotic aliens plan the destruction of mankind.
+            p.narbot Meanwhile, lurking above..An aggresive army of robotic aliens plan the destruction of mankind.
           //- button#mute.tiny.alert mute
 
   .row#robot
@@ -32,7 +32,7 @@ block content
       .large-6.columns
         .ex
           #badGuy.pic
-            p.nar  Behold, the evil genius leader _________.
+            p.nar  Behold, their evil genius leader Vlad.
       .large-12.columns
         .ex
           #badship.pic
@@ -63,8 +63,6 @@ block content
               #speechgood
                 p No, we need to<br>teleport.
 
-      //- button#bad bad
-
   .row#wrong
     .pagewrap
       .large-12.columns
@@ -76,25 +74,28 @@ block content
     .pagewrap
       .large-12.columns
         .ex
-          #beam.full
-            p.nar= "The ship is overtaken and our hero, " + reader.hero + ", is transported to earth at the last possible second."
+          #beam.beam.full
+            p.nar= "The ship is overtaken and our hero " + reader.hero + ", is transported to earth at the last possible second."
+            audio#sweep(src='/audios/sweep.mp3')
+
   .row#plans
     .pagewrap
       .large-12.columns
         .ex
           #shipexplodes.pic
             p.nar The enemy scavenges your ship and sets it to self destruct. The worthless ship detonates while all the intelligence it once held has now taken taken refuge in an average family pet.
+            audio#bomb(src='/audios/bomb.mp3')
       .large-6.columns
         .ex
           #newbody.pic
             p.nar= reader.dog + " has taken on an entirely new entity. This is the effect of a quantum leap in real time."
             #dogthought
                 p  Why do I want<br>to chase that cat?
-            //- ; bubble "huh? what happened? Why do I want to chase that cat?"
       .large-6.columns
         .ex
           #cat.pic
             p.nar= "Only the family cat and two year old youngster " + reader.child + " can sense a change in " + reader.dog + "."
+            audio#meow(src='/audios/meow.mp3')
 
   .row#choice2
     .pagewrap
@@ -131,7 +132,7 @@ block content
     .pagewrap
       .large-12.columns
         .ex
-          #childanddog.pic
+          #childanddog.beam2.pic
             p.nar= "With a small amount of energy, " + reader.hero + " transports from " + reader.dog + " into " + reader.child + "."
       .large-6.columns
         .ex
@@ -160,7 +161,7 @@ block content
             p.nar You are stuck with a difficult descision. Either make an S.O.S. to call your home planet for backup or hack into N.A.S.A.'s laser defense system and destroy the threat. Time us almost up. Try something!!
           a
             #computegood
-                p Hack Nasa??
+                p Hack N.A.S.A.??
           a
             #computebad
                 p Send an S.O.S.<br>for backup??
@@ -185,6 +186,7 @@ block content
         .ex
           #shoot.pic
             p.nar Detonate!!
+            audio#raygun(src='/audios/raygun.mp3')
       .large-6.columns
         .ex
           #mirror.pic
@@ -199,6 +201,6 @@ block content
         .large-12.columns
           .ex
             #earthend.pic
-              p.nar= "Congratulations " + reader.hero + ". The world is yours."
+              p.narbot= "Congratulations " + reader.hero + ". The world is yours."
            p#title You saved the planet!
 
