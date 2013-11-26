@@ -194,6 +194,8 @@ function initialize(){
     parallax.wrong3.top();
     parallax.wrong3.onload = function(){
       alert('S.O.S.?? You are S.O.L.  click picture to abort.');
+      document.getElementById('beep').play();
+
     };
   }
 

@@ -171,6 +171,8 @@ block content
       .large-12.columns
         #sos.full
           p.nar Your transmission has been interrupted. You die.
+          audio#beep(src='/audios/beep.mp3')
+
 
   .row#end
     .pagewrap
@@ -203,4 +205,5 @@ block content
             #earthend.pic
               p.narbot= "Congratulations " + reader.hero + ". The world is yours."
            p#title You saved the planet!
+           p#credits Story by Matt Reno and Brian Threlkeld
 
