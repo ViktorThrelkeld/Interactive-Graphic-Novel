@@ -72,11 +72,11 @@ function initialize(){
     // alert('yo');
 
 
-    // document.getElementById('distress1min.mp3').Play();
+
     document.getElementById('distress').play();
-    // getElementById('distress1min.mp3').play();
-    // var myAudio = document.getElementById('distress1min.mp3');
-    // myAudio.setAttribute('autoplay', 'autoplay');
+    // document.getElementById('distress').addEventListener('ended', function(){
+    // this.currentTime = 0;
+    // }, false);
   };
 
    parallax.robot.onload = function(){
@@ -114,11 +114,16 @@ function initialize(){
   parallax.transport2.onload = function(){
     fromLeft("choice2");
     fromTop("choice3");
+    timer = setInterval(function(){
+      $('#childanddog').toggleClass('beamed2');
+    }, 200);
   };
 
   parallax.choice3.onload = function(){
     fromLeft("transport2");
     // fromRight("end");
+    clearInterval(timer);
+
   };
 
   parallax.end.onload = function(){
