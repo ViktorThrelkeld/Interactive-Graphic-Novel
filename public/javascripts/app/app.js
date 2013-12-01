@@ -179,21 +179,21 @@ function initialize(){
   function wrong1(){
     parallax.wrong.bottom();
       parallax.wrong.onload = function(){
-      alert('Wrong Choice...Your computer will now explode. Goodbye. click picture to abort.');
+      alert('Wrong Choice...Your computer will now explode. Goodbye. Click picture to abort.');
     };
   }
 
   function wrong2(){
     parallax.wrong2.bottom();
       parallax.wrong2.onload = function(){
-        alert('Wrong Choice..Your are in the pound and the world will now explode.Goodbye. click picture to abort.');
+        alert('Wrong Choice..Your are in the pound and the world will now explode. Goodbye. Click picture to abort.');
     };
   }
 
   function wrong3(){
     parallax.wrong3.top();
     parallax.wrong3.onload = function(){
-      alert('S.O.S.?? You are S.O.L.  click picture to abort.');
+      alert('S.O.S.?? You are S.O.L.  Click picture to abort.');
       document.getElementById('beep').play();
 
     };
