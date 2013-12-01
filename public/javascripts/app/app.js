@@ -17,14 +17,10 @@ function initialize(){
   $('#thoughtgood').on('click', transport2);
   $('#computegood').on('click', end);
   $('#computebad').on('click', wrong3);
-  // $('#mute').on('click', mute);
   $('#cat').on('click', meow);
   $('#shipexplodes').on('click', bomb);
   $('#beam').on('click', sweep);
   $('#shoot').on('click', raygun);
-
-
-
 
 
 //scrolling background
@@ -46,17 +42,15 @@ function initialize(){
   parallax.add($("#end"));
   parallax.add($("#credits"));
 
-//set background scroll speed
+//sets up foregroundground scroll speed
   parallax.speed = 2000;
 
-//set arrow keys
+//set uparrow key controls
   function key(e){
     if(e.keyCode == 39){
       rightKey();
     }else if(e.keyCode == 37) {
       leftKey();
-
-    // alert(e.keyCode);
       e.preventDefault();
     }
   }
@@ -69,26 +63,17 @@ function initialize(){
 //set navigation-------------------------------------------------------------
    parallax.earth.onload = function(){
     fromTop("robot");
-    // alert('yo');
-
-
 
     document.getElementById('distress').play();
-    // document.getElementById('distress').addEventListener('ended', function(){
-    // this.currentTime = 0;
-    // }, false);
   };
 
    parallax.robot.onload = function(){
     fromLeft("earth");
     fromRight("choice1");
-
   };
 
   parallax.choice1.onload = function(){
     fromLeft("robot");
-
-
   };
 
   parallax.transport.onload = function(){
@@ -96,19 +81,17 @@ function initialize(){
     fromBottom("plans");
     timer = setInterval(function(){
       $('#beam').toggleClass('beamed');
-    }, 200);
+    }, 200);// dictates the speed of transport effect
   };
 
   parallax.plans.onload = function(){
     fromLeft("transport");
     fromRight("choice2");
     clearInterval(timer);
-
   };
 
   parallax.choice2.onload = function(){
     fromLeft("plans");
-    // fromRight("transport2");
   };
 
   parallax.transport2.onload = function(){
@@ -116,14 +99,12 @@ function initialize(){
     fromTop("choice3");
     timer = setInterval(function(){
       $('#childanddog').toggleClass('beamed2');
-    }, 200);
+    }, 200);// dictates the speed of transport effect
   };
 
   parallax.choice3.onload = function(){
     fromLeft("transport2");
-    // fromRight("end");
     clearInterval(timer);
-
   };
 
   parallax.end.onload = function(){
@@ -136,7 +117,7 @@ function initialize(){
   };
 
 
-  //set----------------------------------------------------------------------
+//sets up page flow direction----------------------------------------------------------------------
   function fromRight(page){
     rightKey = function(){
       parallax[page].right();
@@ -161,54 +142,13 @@ function initialize(){
     };
   }
 
-  // click functions---------------------------------------------------------
 
-
-  function transport(){
-    parallax.transport.right();
-  }
-
-  function transport2(){
-    parallax.transport2.right();
-  }
-
-  function end(){
-    parallax.end.bottom();
-  }
-
-  function wrong1(){
-    parallax.wrong.bottom();
-      parallax.wrong.onload = function(){
-      alert('Wrong Choice...Your computer will now explode. Goodbye. Click picture to abort.');
-    };
-  }
-
-  function wrong2(){
-    parallax.wrong2.bottom();
-      parallax.wrong2.onload = function(){
-        alert('Wrong Choice..Your are in the pound and the world will now explode. Goodbye. Click picture to abort.');
-    };
-  }
-
-  function wrong3(){
-    parallax.wrong3.top();
-    parallax.wrong3.onload = function(){
-      alert('S.O.S.?? You are S.O.L.  Click picture to abort.');
-      document.getElementById('beep').play();
-
-    };
-  }
-
-  function last(){
-    parallax.last.bottom();
-  }
 
   parallax.earth.show();
 
+}//closes initialize
 
-}//end of initialize
-
-//-------------------------------------------------------------------------
+//sound effects-------------------------------------------------------------------------
 
 function meow(){
   document.getElementById('meow').play();
@@ -226,8 +166,42 @@ function raygun(){
   document.getElementById('raygun').play();
 }
 
- //  function mute(){
- //    alert('hey');
- // // <button onclick="document.getElementById('demo').pause()">Pause the Audio</button>
- //    $('#distress').pause();
- //  }
+// click functions---------------------------------------------------------
+
+function transport(){
+  parallax.transport.right();
+}
+
+function transport2(){
+  parallax.transport2.right();
+}
+
+function end(){
+  parallax.end.bottom();
+}
+
+function wrong1(){
+  parallax.wrong.bottom();
+    parallax.wrong.onload = function(){
+    alert('Wrong Choice...Your computer will now explode. Goodbye. Click picture to abort.');
+  };
+}
+
+function wrong2(){
+  parallax.wrong2.bottom();
+    parallax.wrong2.onload = function(){
+      alert('Wrong Choice..Your are in the pound and the world will now explode. Goodbye. Click picture to abort.');
+  };
+}
+
+function wrong3(){
+  parallax.wrong3.top();
+  parallax.wrong3.onload = function(){
+    alert('S.O.S.?? You are S.O.L.  Click picture to abort.');
+    document.getElementById('beep').play();
+  };
+}
+
+function last(){
+  parallax.last.bottom();
+}

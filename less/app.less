@@ -1,20 +1,19 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:700);
 @import url(http://fonts.googleapis.com/css?family=Bangers);
 @import url(http://fonts.googleapis.com/css?family=Orbitron);
-@base: #ffccab;
+@purple: #380B38;
 
 body{
-  // background-color: @base;
   background: url("/images/star.jpg");
 }
 
 button:hover{
-  background-color: #380B38;
+  background-color: @purple;
 }
 
 .color{
   color: white;
-  background-color: #380B38;
+  background-color: @purple;
 }
 
 #instructions{
@@ -23,27 +22,17 @@ button:hover{
 }
 
 #title{
-font-family: 'Bangers', cursive;
-color: white;
-font-size: 200px;
-// width: 500px;
-width: 800px;
+  font-family: 'Bangers', cursive;
+  color: white;
+  font-size: 200px;
+  width: 800px;
   margin: auto;
   margin-bottom: 20px;
   line-height: 136px;
-  // text-shadow:5px 7px 11px #380d38;
   text-shadow:12px 15px 31px #380b38;
-// margin: auto:
 }
 
-//-----------------------------------------------------------
-//audio
 
-// #mute{
-//   position: fixed;
-//   left: 5px;
-//   top: 5px;
-// }
 //-----------------------------------------------------------
 // bubbles
 
@@ -79,8 +68,27 @@ width: 800px;
   padding-right: 37px;
   color: black;
 }
+// clickable bubbles---------------------------------------------------
 
-
+.bubble_setup{//bubble scale setup
+  transition:All 1s ease;
+  -webkit-transition:All 1s ease;
+  -moz-transition:All 1s ease;
+  -o-transition:All 1s ease;
+  transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -o-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -ms-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+}
+.bubble_hover (@scale) {
+  color: @purple;
+  transform: rotate(0deg) scale(@scale) skew(1deg) translate(0px);
+  -webkit-transform: rotate(0deg) scale(@scale) skew(1deg) translate(0px);
+  -moz-transform: rotate(0deg) scale(@scale) skew(1deg) translate(0px);
+  -o-transform: rotate(0deg) scale(@scale) skew(1deg) translate(0px);
+  -ms-transform: rotate(0deg) scale(@scale) skew(1deg) translate(0px);
+}
 #computegood{
   background-image: url("/images/thought-bubbleflip.png");
   background-repeat: no-repeat;
@@ -94,25 +102,11 @@ width: 800px;
   padding-left: 36px;
   color: red;
   font-family: 'Roboto Condensed',sans-serif;
-
-  transition:All 1s ease;
-  -webkit-transition:All 1s ease;
-  -moz-transition:All 1s ease;
-  -o-transition:All 1s ease;
-  transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -o-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -ms-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  .bubble_setup
 }
 
 #computegood:hover{
-  color: #380B38;
-  transform: rotate(0deg) scale(1.265) skew(1deg) translate(0px);
-  -webkit-transform: rotate(0deg) scale(1.265) skew(1deg) translate(0px);
-  -moz-transform: rotate(0deg) scale(1.265) skew(1deg) translate(0px);
-  -o-transform: rotate(0deg) scale(1.265) skew(1deg) translate(0px);
-  -ms-transform: rotate(0deg) scale(1.265) skew(1deg) translate(0px);
+  .bubble_hover(1.265)
 }
 
 #computebad{
@@ -128,25 +122,11 @@ width: 800px;
   padding-left: 68px;
   color: red;
   font-family: 'Roboto Condensed', sans-serif;
-
-  transition:All 1s ease;
-  -webkit-transition:All 1s ease;
-  -moz-transition:All 1s ease;
-  -o-transition:All 1s ease;
-  transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -o-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -ms-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  .bubble_setup
 }
 
 #computebad:hover{
-  color: #380B38;
-  transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
-  -webkit-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
-  -moz-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
-  -o-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
-  -ms-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
+  .bubble_hover(1.36)
 }
 
 #thoughtbad{
@@ -163,25 +143,11 @@ width: 800px;
   opacity: 0.9;
   font-family: 'Roboto Condensed',sans-serif;
   color: red;
-
-  transition:All 1s ease;
-  -webkit-transition:All 1s ease;
-  -moz-transition:All 1s ease;
-  -o-transition:All 1s ease;
-  transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -o-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -ms-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  .bubble_setup
 }
 
 #thoughtbad:hover{
-  color: #380B38;
-  transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
-  -webkit-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
-  -moz-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
-  -o-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
-  -ms-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
+  .bubble_hover(1.36)
 }
 
 #thoughtgood{
@@ -193,7 +159,6 @@ width: 800px;
   width: 209px;
   padding-left: 49px;
   padding-top: 40px;
-  // margin-left: 47px;
   position: absolute;
   left: -71px;
   top: 24px;
@@ -201,27 +166,11 @@ width: 800px;
   opacity: 0.9;
   font-family: 'Roboto Condensed',sans-serif;
   color: red;
-
-  transition:All 1s ease;
-  -webkit-transition:All 1s ease;
-  -moz-transition:All 1s ease;
-  -o-transition:All 1s ease;
-  transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -o-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -ms-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  .bubble_setup
 }
 
 #thoughtgood:hover{
-  color: #380B38;
-  transform: rotate(0deg) scale(1.203) skew(1deg) translate(0px);
--webkit-transform: rotate(0deg) scale(1.203) skew(1deg) translate(0px);
--moz-transform: rotate(0deg) scale(1.203) skew(1deg) translate(0px);
--o-transform: rotate(0deg) scale(1.203) skew(1deg) translate(0px);
--ms-transform: rotate(0deg) scale(1.203) skew(1deg) translate(0px);
-
-
+  .bubble_hover(1.203)
 }
 
 #speechbad{
@@ -238,25 +187,11 @@ width: 800px;
   padding-top: 9px;
   padding-right: 37px;
   color: red;
-
-  transition:All 1s ease;
-  -webkit-transition:All 1s ease;
-  -moz-transition:All 1s ease;
-  -o-transition:All 1s ease;
-  transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -o-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -ms-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  .bubble_setup
 }
 
 #speechbad:hover{
-  color: #380B38;
-  transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
-  -webkit-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
-  -moz-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
-  -o-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
-  -ms-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
+  .bubble_hover(1.36)
 }
 
 #speechgood{
@@ -273,26 +208,11 @@ width: 800px;
   padding-left: 21px;
   padding-top: 20px;
   color: red;
-
-  transition:All 1s ease;
-  -webkit-transition:All 1s ease;
-  -moz-transition:All 1s ease;
-  -o-transition:All 1s ease;
-  transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -o-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -ms-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  .bubble_setup
 }
 
 #speechgood:hover{
-  color: #380B38;
-  transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
-  -webkit-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
-  -moz-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
-  -o-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
-  -ms-transform: rotate(0deg) scale(1.36) skew(1deg) translate(0px);
-
+ .bubble_hover(1.36)
 }
 
 //--------------------------------------------------------------------//
@@ -382,8 +302,6 @@ width: 800px;
   -ms-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
 }
 
-
-
 #newbody{
   background-image: url("/images/newbody.jpg");
   background-size: 100% 100%;
@@ -421,8 +339,6 @@ width: 800px;
   -ms-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
 }
 
-
-
 #dogandchild{
   background-image: url("/images/dogandchild.jpg");
   background-size: 100% 100%;
@@ -448,11 +364,6 @@ width: 800px;
   background-image: url("/images/pound.jpg");
   background-size: 100% 100%;
 }
-
-// #childanddog{
-//   background-image: url("/images/childanddog.jpg");
-//   background-size: 100% 100%;
-// }
 
 .beam2{
   background-image: url("/images/transport2.jpg");
@@ -566,19 +477,11 @@ width: 800px;
 
 
 //------------------------------------------------------------------------//
-// classes
-// .row{
-//   width: 100% !important;
-// }
-// #save{
-//   margin: auto;
-// }
 
 #instructions{
   padding-left: 5px;
   color: black;
   background-color: yellow;
-  // width: 100%;
   opacity: 0.9;
   border: solid black 3px;
   font-family: 'Roboto Condensed', sans-serif;
@@ -590,14 +493,14 @@ width: 800px;
 }
 
 .nar{
-padding-left: 5px;
-color: black;
-background-color: yellow;
-width: 100%;
-opacity: 0.9;
-border: solid black 2px;
-font-family: 'Roboto Condensed', sans-serif;
-font-size: 12px;
+  padding-left: 5px;
+  color: black;
+  background-color: yellow;
+  width: 100%;
+  opacity: 0.9;
+  border: solid black 2px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 12px;
 }
 
 .narbot{
@@ -611,7 +514,6 @@ font-size: 12px;
   font-size: 12px;
   position: relative;
   top: 94%;
-  // right:0;
 }
 
 .row {
@@ -620,8 +522,6 @@ font-size: 12px;
 
 .pagewrap{
   width: 60%;
-  // margin-left: auto;
-  // margin-right: auto;
   margin: auto;
   margin-top: 50px;
 
@@ -633,9 +533,6 @@ font-size: 12px;
   height:350px;
   margin-bottom: 20px;
   border: solid black 5px;
-
-  // margin-left: 400px;
-  // margin: auto;
 }
 
 .full{
@@ -643,7 +540,6 @@ font-size: 12px;
   width: 100%;
   height:720px;
   margin-bottom: 20px;
-  // margin-left: 400px;
 }
 
 .bubble{
