@@ -3,6 +3,29 @@
 @import url(http://fonts.googleapis.com/css?family=Orbitron);
 @purple: #380B38;
 
+.setup (@time; @ease) {//transition setup
+  transition:All @time @ease;
+  -webkit-transition:All @time @ease;
+  -moz-transition:All @time @ease;
+  -o-transition:All @time @ease;
+  transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -o-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  -ms-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+}
+
+.hover (@rotate; @scale; @skew; @translate) {//hover transition
+  color: @purple;
+  transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+  -webkit-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+  -moz-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+  -o-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+  -ms-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+}
+
+
+
 body{
   background: url("/images/star.jpg");
 }
@@ -36,183 +59,144 @@ button:hover{
 //-----------------------------------------------------------
 // bubbles
 
-#applesauce{
-  background-image: url("/images/speechR.png");
+.bubble_prop(@image){
+  background-image: url("/images/@{image}");
   background-repeat: no-repeat;
+  position: absolute;
+  font-family: 'Roboto Condensed',sans-serif;
+  font-size: 15px;
+  z-index: 3;
+  opacity: 0.9;
+}
+
+#applesauce{
+  .bubble_prop("speechR.png");
   background-size: 75% 86%;
   width: 200px;
   height: 123px;
-  position: absolute;
   right: -118px;
   top: 51px;
   padding-top: 19px;
   padding-left: 30px;
   color: black;
-  font-family: 'Roboto Condensed',sans-serif;
-  font-size: 15px;
-  z-index: 3;
 }
 
 #dogthought{
-  background-image: url("/images/speech1.png");
+  .bubble_prop("speech1.png");
   height: 92px;
   width: 195px;
-  position: absolute;
   left: 22px;
   background-size: 94% 93%;
-  background-repeat: no-repeat;
-  opacity: 0.9;
-  font-family: 'Roboto Condensed',sans-serif;
   padding-left: 37px;
   padding-top: 9px;
   padding-right: 37px;
   color: black;
 }
+
 // clickable bubbles---------------------------------------------------
 
-.bubble_setup{//bubble scale setup
-  transition:All 1s ease;
-  -webkit-transition:All 1s ease;
-  -moz-transition:All 1s ease;
-  -o-transition:All 1s ease;
-  transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -o-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -ms-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-}
-.bubble_hover (@scale) {
-  color: @purple;
-  transform: rotate(0deg) scale(@scale) skew(1deg) translate(0px);
-  -webkit-transform: rotate(0deg) scale(@scale) skew(1deg) translate(0px);
-  -moz-transform: rotate(0deg) scale(@scale) skew(1deg) translate(0px);
-  -o-transform: rotate(0deg) scale(@scale) skew(1deg) translate(0px);
-  -ms-transform: rotate(0deg) scale(@scale) skew(1deg) translate(0px);
-}
+
 #computegood{
-  background-image: url("/images/thought-bubbleflip.png");
-  background-repeat: no-repeat;
+  .bubble_prop("thought-bubbleflip.png");
   background-size: 81% 119%;
   width: 225px;
   height: 123px;
-  position: absolute;
   left: 114px;
   top: 58px;
   padding-top: 33px;
   padding-left: 36px;
   color: red;
-  font-family: 'Roboto Condensed',sans-serif;
-  .bubble_setup
+  .setup(1s; ease)
 }
 
 #computegood:hover{
-  .bubble_hover(1.265)
+  .hover(0deg; 1.265; 1deg; 0px)
 }
 
 #computebad{
-  background-image: url("/images/thought-bubble.png");
-  background-repeat: no-repeat;
+  .bubble_prop("thought-bubble.png");
   background-size: 108% 124%;
   width: 200px;
   height: 123px;
-  position: absolute;
   right: 134px;
   top: 71px;
   padding-top: 31px;
   padding-left: 68px;
   color: red;
-  font-family: 'Roboto Condensed', sans-serif;
-  .bubble_setup
+  .setup(1s; ease)
 }
 
 #computebad:hover{
-  .bubble_hover(1.36)
+  .hover(0deg; 1.36; 1deg; 0px)
 }
 
 #thoughtbad{
-  background-image: url("/images/thought-bubble.png");
+  .bubble_prop("thought-bubble.png");
   height: 108px;
   width: 155px;
   background-size: 110% 116%;
-  background-repeat: no-repeat;
   padding-left: 50px;
   padding-top: 15px;
-  position: absolute;
   left: 272px;
   top: 30px;
   opacity: 0.9;
-  font-family: 'Roboto Condensed',sans-serif;
   color: red;
-  .bubble_setup
+  .setup(1s; ease)
 }
 
 #thoughtbad:hover{
-  .bubble_hover(1.36)
+  .hover(0deg; 1.36; 1deg; 0px)
 }
 
 #thoughtgood{
-  z-index: 3;
-  background-image: url("/images/thought-bubbleflip.png");
+  .bubble_prop("thought-bubbleflip.png");
   height: 210px;
   background-size: 100% 129%;
-  background-repeat: no-repeat;
   width: 209px;
   padding-left: 49px;
   padding-top: 40px;
-  position: absolute;
   left: -71px;
   top: 24px;
   color: red;
-  opacity: 0.9;
-  font-family: 'Roboto Condensed',sans-serif;
-  color: red;
-  .bubble_setup
+  .setup(1s; ease)
 }
 
 #thoughtgood:hover{
-  .bubble_hover(1.203)
+  .hover(0deg; 1.203; 1deg; 0px)
 }
 
 #speechbad{
-  background-image: url("/images/speech1.png");
+  .bubble_prop("speech1.png");
   height: 92px;
   width: 195px;
-  position: absolute;
   left: 22px;
   background-size: 94% 93%;
-  background-repeat: no-repeat;
-  opacity: 0.9;
-  font-family: 'Roboto Condensed',sans-serif;
   padding-left: 37px;
   padding-top: 9px;
   padding-right: 37px;
   color: red;
-  .bubble_setup
+  .setup(1s; ease)
 }
 
 #speechbad:hover{
-  .bubble_hover(1.36)
+  .hover(0deg; 1.36; 1deg; 0px)
 }
 
 #speechgood{
-  background-image: url("/images/speech1.png");
+  .bubble_prop("speech1.png");
   height: 97px;
   width: 128px;
   background-size: 99% 103%;
-  background-repeat: no-repeat;
-  opacity: 0.9;
-  font-family: 'Roboto Condensed',sans-serif;
-  position: absolute;
   left: 119px;
   top: 20px;
   padding-left: 21px;
   padding-top: 20px;
   color: red;
-  .bubble_setup
+  .setup(1s; ease)
 }
 
 #speechgood:hover{
- .bubble_hover(1.36)
+ .hover(0deg; 1.36; 1deg; 0px)
 }
 
 //--------------------------------------------------------------------//
@@ -282,24 +266,11 @@ button:hover{
 #shipexplodes{
   background-image: url("/images/shipexplodes.jpg");
   background-size: 100% 100%;
-  transition:All 1s ease;
-  -webkit-transition:All 1s ease;
-  -moz-transition:All 1s ease;
-  -o-transition:All 1s ease;
-  transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -o-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -ms-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  .setup(1s; ease)
 }
 
 #shipexplodes:hover{
-
-  transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
-  -webkit-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
-  -moz-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
-  -o-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
-  -ms-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
+  .hover(0deg; 1.095; 1deg; 0px)
 }
 
 #newbody{
@@ -320,23 +291,11 @@ button:hover{
 #cat{
   background-image: url("/images/cat.jpg");
   background-size: 100% 100%;
-  transition:All 1s ease;
-  -webkit-transition:All 1s ease;
-  -moz-transition:All 1s ease;
-  -o-transition:All 1s ease;
-  transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -o-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -ms-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  .setup(1s; ease)
 }
 
 #cat:hover{
-  transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
-  -webkit-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
-  -moz-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
-  -o-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
-  -ms-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
+  .hover(0deg; 1.095; 1deg; 0px)
 }
 
 #dogandchild{
@@ -420,24 +379,11 @@ button:hover{
 #shoot{
   background-image: url("/images/shoot.jpg");
   background-size: 100% 100%;
-  transition:All 1s ease;
-  -webkit-transition:All 1s ease;
-  -moz-transition:All 1s ease;
-  -o-transition:All 1s ease;
-  transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -o-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -ms-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-
+  .setup(1s; ease)
 }
 
 #shoot:hover{
-  transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
-  -webkit-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
-  -moz-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
-  -o-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
-  -ms-transform: rotate(0deg) scale(1.095) skew(1deg) translate(0px);
+  .hover(0deg; 1.095; 1deg; 0px)
 }
 
 #mirror{
@@ -448,24 +394,11 @@ button:hover{
 #enemydies{
   background-image: url("/images/enemydies.jpg");
   background-size: 100% 100%;
-
-  transition:All 3.1436s ease-in-out;
-  -webkit-transition:All 3.1436s ease-in-out;
-  -moz-transition:All 3.1436s ease-in-out;
-  -o-transition:All 3.1436s ease-in-out;
-  transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -o-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
-  -ms-transform: rotate(0deg) scale(1) skew(1deg) translate(10px);
+  .setup(3.1436s; ease-in-out)
 }
 
 #enemydies:hover{
-  transform: rotate(360deg) scale(1) skew(0deg) translate(0px);
-  -webkit-transform: rotate(360deg) scale(1) skew(0deg) translate(0px);
-  -moz-transform: rotate(360deg) scale(1) skew(0deg) translate(0px);
-  -o-transform: rotate(360deg) scale(1) skew(0deg) translate(0px);
-  -ms-transform: rotate(360deg) scale(1) skew(0deg) translate(0px);
+  .hover(360deg; 1; 0deg; 0px)
 }
 
 
