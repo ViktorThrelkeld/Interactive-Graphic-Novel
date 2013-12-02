@@ -3,6 +3,9 @@
 @import url(http://fonts.googleapis.com/css?family=Orbitron);
 @purple: #380B38;
 
+//------------------------------------------------------------------------//
+//mixins
+
 .setup (@time; @ease) {//transition setup
   transition:All @time @ease;
   -webkit-transition:All @time @ease;
@@ -24,6 +27,33 @@
   -ms-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
 }
 
+.bubble_prop(@image; @color){
+  background-image: url("/images/@{image}");
+  background-repeat: no-repeat;
+  position: absolute;
+  font-family: 'Roboto Condensed',sans-serif;
+  font-size: 15px;
+  z-index: 3;
+  opacity: 0.9;
+  color: @color;
+}
+
+.panel_prop(@image; @size){
+  background-image: url("/images/@{image}");
+  background-size: @size;
+}
+
+.narrations{
+  padding-left: 5px;
+  color: black;
+  background-color: yellow;
+  opacity: 0.9;
+  border: solid black 3px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+//end mixins
+//------------------------------------------------------------------------//
 
 
 body{
@@ -34,14 +64,12 @@ button:hover{
   background-color: @purple;
 }
 
+//------------------------------------------------------------------------//
+//form page
+
 .color{
   color: white;
   background-color: @purple;
-}
-
-#instructions{
-    font-family: 'Roboto Condensed',sans-serif;
-    color: white;
 }
 
 #title{
@@ -55,20 +83,8 @@ button:hover{
   text-shadow:12px 15px 31px #380b38;
 }
 
-
-//-----------------------------------------------------------
+//------------------------------------------------------------------------//
 // bubbles
-
-.bubble_prop(@image; @color){
-  background-image: url("/images/@{image}");
-  background-repeat: no-repeat;
-  position: absolute;
-  font-family: 'Roboto Condensed',sans-serif;
-  font-size: 15px;
-  z-index: 3;
-  opacity: 0.9;
-  color: @color;
-}
 
 #applesauce{
   .bubble_prop("speechR.png"; black);
@@ -93,8 +109,8 @@ button:hover{
   padding-right: 37px;
 }
 
-// clickable bubbles---------------------------------------------------
-
+//------------------------------------------------------------------------//
+ //clickable bubbles
 
 #computegood{
   .bubble_prop("thought-bubbleflip.png"; red);
@@ -193,12 +209,8 @@ button:hover{
  .hover(0deg; 1.36; 1deg; 0px)
 }
 
-//--------------------------------------------------------------------//
+//------------------------------------------------------------------------//
 // panel images
-.panel_prop(@image; @size){
-  background-image: url("/images/@{image}");
-  background-size: @size;
-}
 
 #space{
   .panel_prop("earth.jpg"; cover);
@@ -367,40 +379,26 @@ button:hover{
 
 
 //------------------------------------------------------------------------//
+//misc
 
 #instructions{
-  padding-left: 5px;
-  color: black;
-  background-color: yellow;
-  opacity: 0.9;
-  border: solid black 3px;
-  font-family: 'Roboto Condensed', sans-serif;
+  .narrations;
   font-size: 20px;
   width: 800px;
   margin: auto;
   margin-bottom: 20px;
-
 }
 
 .nar{
-  padding-left: 5px;
-  color: black;
-  background-color: yellow;
+  .narrations;
   width: 100%;
-  opacity: 0.9;
-  border: solid black 2px;
-  font-family: 'Roboto Condensed', sans-serif;
   font-size: 12px;
 }
 
 .narbot{
+  .narrations;
   padding-left: 2px;
-  color: black;
-  background-color: yellow;
   width: 100%;
-  opacity: 0.9;
-  border: solid black 2px;
-  font-family: 'Roboto Condensed', sans-serif;
   font-size: 12px;
   position: relative;
   top: 94%;
