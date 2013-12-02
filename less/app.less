@@ -59,7 +59,7 @@ button:hover{
 //-----------------------------------------------------------
 // bubbles
 
-.bubble_prop(@image){
+.bubble_prop(@image; @color){
   background-image: url("/images/@{image}");
   background-repeat: no-repeat;
   position: absolute;
@@ -67,10 +67,11 @@ button:hover{
   font-size: 15px;
   z-index: 3;
   opacity: 0.9;
+  color: @color;
 }
 
 #applesauce{
-  .bubble_prop("speechR.png");
+  .bubble_prop("speechR.png"; black);
   background-size: 75% 86%;
   width: 200px;
   height: 123px;
@@ -78,11 +79,11 @@ button:hover{
   top: 51px;
   padding-top: 19px;
   padding-left: 30px;
-  color: black;
+
 }
 
 #dogthought{
-  .bubble_prop("speech1.png");
+  .bubble_prop("speech1.png"; black);
   height: 92px;
   width: 195px;
   left: 22px;
@@ -90,14 +91,13 @@ button:hover{
   padding-left: 37px;
   padding-top: 9px;
   padding-right: 37px;
-  color: black;
 }
 
 // clickable bubbles---------------------------------------------------
 
 
 #computegood{
-  .bubble_prop("thought-bubbleflip.png");
+  .bubble_prop("thought-bubbleflip.png"; red);
   background-size: 81% 119%;
   width: 225px;
   height: 123px;
@@ -105,7 +105,6 @@ button:hover{
   top: 58px;
   padding-top: 33px;
   padding-left: 36px;
-  color: red;
   .setup(1s; ease)
 }
 
@@ -114,7 +113,7 @@ button:hover{
 }
 
 #computebad{
-  .bubble_prop("thought-bubble.png");
+  .bubble_prop("thought-bubble.png"; red);
   background-size: 108% 124%;
   width: 200px;
   height: 123px;
@@ -122,7 +121,6 @@ button:hover{
   top: 71px;
   padding-top: 31px;
   padding-left: 68px;
-  color: red;
   .setup(1s; ease)
 }
 
@@ -131,7 +129,7 @@ button:hover{
 }
 
 #thoughtbad{
-  .bubble_prop("thought-bubble.png");
+  .bubble_prop("thought-bubble.png"; red);
   height: 108px;
   width: 155px;
   background-size: 110% 116%;
@@ -140,7 +138,6 @@ button:hover{
   left: 272px;
   top: 30px;
   opacity: 0.9;
-  color: red;
   .setup(1s; ease)
 }
 
@@ -149,7 +146,7 @@ button:hover{
 }
 
 #thoughtgood{
-  .bubble_prop("thought-bubbleflip.png");
+  .bubble_prop("thought-bubbleflip.png"; red);
   height: 210px;
   background-size: 100% 129%;
   width: 209px;
@@ -157,7 +154,6 @@ button:hover{
   padding-top: 40px;
   left: -71px;
   top: 24px;
-  color: red;
   .setup(1s; ease)
 }
 
@@ -166,7 +162,7 @@ button:hover{
 }
 
 #speechbad{
-  .bubble_prop("speech1.png");
+  .bubble_prop("speech1.png"; red);
   height: 92px;
   width: 195px;
   left: 22px;
@@ -174,7 +170,6 @@ button:hover{
   padding-left: 37px;
   padding-top: 9px;
   padding-right: 37px;
-  color: red;
   .setup(1s; ease)
 }
 
@@ -183,7 +178,7 @@ button:hover{
 }
 
 #speechgood{
-  .bubble_prop("speech1.png");
+  .bubble_prop("speech1.png"; red);
   height: 97px;
   width: 128px;
   background-size: 99% 103%;
@@ -191,7 +186,6 @@ button:hover{
   top: 20px;
   padding-left: 21px;
   padding-top: 20px;
-  color: red;
   .setup(1s; ease)
 }
 
@@ -201,71 +195,62 @@ button:hover{
 
 //--------------------------------------------------------------------//
 // panel images
+.panel_prop(@image; @size){
+  background-image: url("/images/@{image}");
+  background-size: @size;
+}
 
 #space{
-  background-image: url("/images/earth.jpg");
-  background-size: cover;
+  .panel_prop("earth.jpg"; cover);
  }
 
 #annie{
-  background-image: url("/images/annie.jpg");
-  background-size: cover;
+  .panel_prop("annie.jpg"; cover);
  }
 
 #meal{
-  background-image: url("/images/food.jpg");
-    background-size: cover;
+  .panel_prop("food.jpg"; cover);
  }
 
 #sunset{
-  background-image: url("/images/sunset.jpg");
-    background-size: 100% 100%;
+  .panel_prop("sunset.jpg"; 100% 100%);
  }
 
 #enemy{
-  background-image: url("/images/enemy.png");
-  background-size: 100% 100%;
+  .panel_prop("enemy.png"; 100% 100%);
 }
 
 #badGuy{
-  background-image: url("/images/badGuy.png");
-  background-size: cover;
+  .panel_prop("badGuy.png"; cover);
 }
 
 #badship{
-  background-image: url("/images/badShip.jpg");
-  background-size: cover;
-
+  .panel_prop("badShip.jpg"; cover);
 }
 
 #closeup{
-  background-image: url("/images/closeup.jpg");
-  background-size: cover;
+  .panel_prop("closeup.jpg"; cover);
 }
 
+
 #fleet{
-  background-image: url("/images/fleet.jpg");
-    background-size: 100% 100%;
+  .panel_prop("fleet.jpg"; 100% 100%);
 }
 
 #close2{
-  background-image: url("/images/close2.jpg");
-  background-size: 100% 100%;
+  .panel_prop("close2.jpg"; 100% 100%);
 }
 
 #decide{
-  background-image: url("/images/decide.jpg");
-  background-size: cover;
+  .panel_prop("decide.jpg"; cover);
 }
 
 #boom{
-  background-image: url("/images/boom.jpg");
-  background-size: 100% 100%;
+  .panel_prop("boom.jpg"; 100% 100%);
 }
 
 #shipexplodes{
-  background-image: url("/images/shipexplodes.jpg");
-  background-size: 100% 100%;
+  .panel_prop("shipexplodes.jpg"; 100% 100%);
   .setup(1s; ease)
 }
 
@@ -274,23 +259,19 @@ button:hover{
 }
 
 #newbody{
-  background-image: url("/images/newbody.jpg");
-  background-size: 100% 100%;
+  .panel_prop("newbody.jpg"; 100% 100%);
 }
 
 .beam{
-  background-image: url("/images/transport.jpg");
-  background-size: 100% 100%;
+  .panel_prop("transport.jpg"; 100% 100%);
 }
 
 .beamed{
-  background-image: url("/images/transported.jpg");
-  background-size: 100% 100%;
+  .panel_prop("transported.jpg"; 100% 100%);
 }
 
 #cat{
-  background-image: url("/images/cat.jpg");
-  background-size: 100% 100%;
+   .panel_prop("cat.jpg"; 100% 100%);
   .setup(1s; ease)
 }
 
@@ -299,86 +280,67 @@ button:hover{
 }
 
 #dogandchild{
-  background-image: url("/images/dogandchild.jpg");
-  background-size: 100% 100%;
+  .panel_prop("dogandchild.jpg"; 100% 100%);
 }
 
 #dogcomp{
-  background-image: url("/images/dogcomp.jpg");
-  background-size: 100% 100%;
-
+  .panel_prop("dogcomp.jpg"; 100% 100%);
 }
 
 #door{
-  background-image: url("/images/door.jpg");
-  background-size: 100% 100%;
+  .panel_prop("door.jpg"; 100% 100%);
 }
 
 #dogclose{
-  background-image: url("/images/dogclose.jpg");
-  background-size: 100% 100%;
+  .panel_prop("dogclose.jpg"; 100% 100%);
 }
 
 #pound{
-  background-image: url("/images/pound.jpg");
-  background-size: 100% 100%;
+  .panel_prop("pound.jpg"; 100% 100%);
 }
 
 .beam2{
-  background-image: url("/images/transport2.jpg");
-  background-size: 100% 100%;
+  .panel_prop("transport2.jpg"; 100% 100%);
 }
 
 .beamed2{
-  background-image: url("/images/transported2.jpg");
-  background-size: 100% 100%;
+  .panel_prop("transported2.jpg"; 100% 100%);
 }
 
 #dish{
-  background-image: url("/images/dish.jpg");
-  background-size: 100% 100%;
+  .panel_prop("dish.jpg"; 100% 100%);
 }
 
 #bedtime{
-  background-image: url("/images/bedtime.jpg");
-  background-size: 100% 100%;
+  .panel_prop("bedtime.jpg"; 100% 100%);
 }
 
 #sneaking{
-  background-image: url("/images/sneaking.jpg");
-  background-size: 100% 100%;
-
+  .panel_prop("sneaking.jpg"; 100% 100%);
 }
 
 #bothatcomp{
-  background-image: url("/images/bothatcomp.jpg");
-  background-size: 100% 100%;
+  .panel_prop("bothatcomp.jpg"; 100% 100%);
 }
 
 #keyboard{
-  background-image: url("/images/keyboard.jpg");
-  background-size: 100% 100%;
+  .panel_prop("keyboard.jpg"; 100% 100%);
 }
 
 #sos{
-  background-image: url("/images/sos.jpg");
-  background-size: 100% 100%;
-
+  .panel_prop("sos.jpg"; 100% 100%);
 }
 
 #childcomp{
-  background-image: url("/images/childcomp.jpg");
-  background-size: 100% 100%;
+  .panel_prop("childcomp.jpg"; 100% 100%);
 }
 
 #sat1{
-  background-image: url("/images/sat1.jpg");
-  background-size: 100% 100%;
+  .panel_prop("sat1.jpg"; 100% 100%);
 }
 
 #shoot{
-  background-image: url("/images/shoot.jpg");
-  background-size: 100% 100%;
+  .panel_prop("shoot.jpg"; 100% 100%);
   .setup(1s; ease)
 }
 
@@ -387,13 +349,11 @@ button:hover{
 }
 
 #mirror{
-  background-image: url("/images/mirror.jpg");
-  background-size: 100% 100%;
+  .panel_prop("mirror.jpg"; 100% 100%);
 }
 
 #enemydies{
-  background-image: url("/images/enemydies.jpg");
-  background-size: 100% 100%;
+  .panel_prop("enemydies.jpg"; 100% 100%);
   .setup(3.1436s; ease-in-out)
 }
 
@@ -401,11 +361,8 @@ button:hover{
   .hover(360deg; 1; 0deg; 0px)
 }
 
-
 #earthend{
-  background-image: url("/images/earthend.jpg");
-  background-size: 100% 100%;
-
+  .panel_prop("earthend.jpg"; 100% 100%);
 }
 
 
